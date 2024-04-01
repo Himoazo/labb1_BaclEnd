@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lägg till kurs</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 class="logo"><a href="/">Node.js</a></h1>
+        <!-- Meny knapp för att öppna mobilmenyn-->
+        <button class="menu-btn open" id="open-menu">
+            <span class="menu-icon">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </span>
+            <span class="menu-text">Meny</span>
+        </button>
+        <!-- navigering -->
+        <nav id="nav-menu">
+            <!-- Knapp som visas om mobilmenyn är utfälld -->
+            <button class="menu-btn close" id="close-menu">
+                <span class="menu-icon">
+                    <span class="bars cross1"></span>
+                    <span class="bars cross2"></span>
+                </span>
+                <span class="menu-text">Stäng</span>
+            </button>
+            <ul>
+                <li><a href="/">Startsida</a></li>
+                <li><a href="add">Lågg till kurs</a></li>
+                <li><a href="about">Om webbplatsen</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+    <form method="post" action="/">
+        <label for="coursecode">Kurskod:</label>
+        <input type="text" name="coursecode" id="coursecode" maxlength="6"><br>
+        <label for="coursename">Kursnamn:</label>
+        <input type="text" name="coursename" id="coursename" ><br>
+        <label for="progression">Progression: </label>
+        <input type="radio" name="progression" value="A" id="progression"> A
+        <input type="radio" name="progression" value="B" id="progression"> B
+        <input type="radio" name="progression" value="C"id="progression"> C
+        <input type="submit" value="Lägg till kurs">
+    </form>
+
+    <% if(locals.error != "") { %>
+        <p id="error"> <%= locals.error %></p>
+    <% } %>
+    </main>
+    <footer>
+        <p>Backend-baserad webbutveckling</p>
+    </footer>
+</body>
+</html>

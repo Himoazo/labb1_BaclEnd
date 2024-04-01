@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Om webbplatsen</title>
+</head>
+<body>
+    <header>
+        <h1 class="logo"><a href="/">Node.js</a></h1>
+        <!-- Meny knapp för att öppna mobilmenyn-->
+        <button class="menu-btn open" id="open-menu">
+            <span class="menu-icon">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </span>
+            <span class="menu-text">Meny</span>
+        </button>
+        <!-- navigering -->
+        <nav id="nav-menu">
+            <!-- Knapp som visas om mobilmenyn är utfälld -->
+            <button class="menu-btn close" id="close-menu">
+                <span class="menu-icon">
+                    <span class="bars cross1"></span>
+                    <span class="bars cross2"></span>
+                </span>
+                <span class="menu-text">Stäng</span>
+            </button>
+            <ul>
+                <li><a href="/">Startsida</a></li>
+                <li><a href="add">Lågg till kurs</a></li>
+                <li><a href="about">Om webbplatsen</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h1>Om webbplatsen</h1>
+            <p>Denna webbplats tillåter sina besökare av webbutvecklingsprogrammet på Mittuniversitet att registrera de kurser som de har studerat. Kurserna i denna webbplats lagras i en databas som använder PostgerSQL databashanteringssystem (DBMS). <br>
+                Webbplatsen är publicerat på Render via GitHub. Den använder Node.js, Express och EJS i backend samt HTML, CSS och Javascript för frontend. <br>
+                En av de viktigaste slutsatserna efter arbetet med denna webbplats är att säkerhet är en mycket viktig aspekt i byggnation av en webbplats eller webb-App. Att bygga en webbplats som fungerar betyder inte nödvändigtvis samma sak som att bygga en säker webbplats som skyddar sina besökares information samt infrastrukturen för själva webbplatsen. 
+                </p>
+        </article>
+        
+    </main>
+</body>
+</html>
