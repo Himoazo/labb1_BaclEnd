@@ -24,6 +24,18 @@ client.connect((err)=>{
 
 
 //Skapa tabell i postgresql db
+/* client.query(`
+    DROP TABLE IF EXISTS courses;
+    CREATE TABLE IF NOT EXISTS courses (
+        id SERIAL PRIMARY KEY,
+        coursecode VARCHAR(6) NOT NULL,
+        coursename TEXT NOT NULL,
+        syllabus TEXT NOT NULL,
+        progression TEXT NOT NULL,
+        creationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+`); */
+
 client.query(`
     DROP TABLE IF EXISTS courses;
     CREATE TABLE IF NOT EXISTS courses (
@@ -34,4 +46,12 @@ client.query(`
         progression TEXT NOT NULL,
         creationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
-`);
+`, (err, res) => {
+    if (err) {
+        console.error('Fel vid CREATE TABLE', err);
+    } else {
+        console.log('Tabellen är skapad');
+    }
+    
+    client.end();
+});
