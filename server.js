@@ -8,7 +8,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));  //Hanterar data i req.body som är urlenvoded
 
 //Skapar db client anslutning
-/* const client = new Client({
+const client = new Client({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     database: process.env.DB_DATABASE,
@@ -26,7 +26,7 @@ client.connect((err)=>{
         console.log("ansluten till databsen");
     }
 });
- */
+
 //Routing:
 
 //Startsida
