@@ -1,7 +1,7 @@
-/* const {Client} = require("pg");
+const {Client} = require("pg");
 require("dotenv").config();
 
-//Skapa databas anslutning med hjälp av info lagrad i .env
+/* //Skapa databas anslutning med hjälp av info lagrad i .env
 const client = new Client({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
