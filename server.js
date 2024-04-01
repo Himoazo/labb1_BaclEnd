@@ -8,7 +8,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));  //Hanterar data i req.body som är urlenvoded
 
 //Skapar db client anslutning
-const client = new Client({
+/* const client = new Client({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     database: process.env.DB_DATABASE,
@@ -26,13 +26,13 @@ client.connect((err)=>{
         console.log("ansluten till databsen");
     }
 });
-
+ */
 //Routing:
 
 //Startsida
 app.get("/", async(req, res)=>{
     //SQL query
-    client.query("SELECT * FROM courses ORDER BY creationDate DESC;", (err, result)=>{
+    /* client.query("SELECT * FROM courses ORDER BY creationDate DESC;", (err, result)=>{
         if(err){
             console.log("fel vid db fråga");
         }else{
@@ -40,7 +40,7 @@ app.get("/", async(req, res)=>{
                 courses: result.rows,
             });
         }
-    })
+    }) */
     
 });
 
@@ -57,7 +57,7 @@ app.post("/", async(req, res)=>{
     const progression = req.body.progression;
 
     
-    if(coursecode != "" && coursename != "" && progression != ""){
+    /* if(coursecode != "" && coursename != "" && progression != ""){
     let error= "";
     //SQL query för att lagra data i tabellen
     const result = await client.query("INSERT INTO courses(coursecode, coursename, syllabus, progression) VALUES($1, $2, $3, $4)",
@@ -67,12 +67,12 @@ app.post("/", async(req, res)=>{
         error = "För att lägga till en kurs, alla fält i formuläret måste vara ifyllda";
         res.render("add", {error: error});
         return;
-    }
+    } */
     res.redirect("/");
 });
 
 //Radera kurs
-app.get("/delete/:id", (req, res)=>{
+/* app.get("/delete/:id", (req, res)=>{
     let id = req.params.id;
 
     client.query("DELETE FROM courses WHERE id = $1", [id], (err)=>{
@@ -82,7 +82,7 @@ app.get("/delete/:id", (req, res)=>{
             res.redirect("/");
         }
     });
-});
+}); */
 
 // Om sidan
 app.get("/about", (req, res)=>{

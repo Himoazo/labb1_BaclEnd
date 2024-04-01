@@ -1,4 +1,4 @@
-const {Client} = require("pg");
+/* const {Client} = require("pg");
 require("dotenv").config();
 
 //Skapa databas anslutning med hjälp av info lagrad i .env
@@ -34,4 +34,4 @@ client.query(`
         progression TEXT NOT NULL,
         creationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
-`);
+`); */
